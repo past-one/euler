@@ -5,10 +5,6 @@ import (
 	"math/rand"
 )
 
-func init() {
-	rand.Seed(0)
-}
-
 type testQuery struct {
 	a, b int
 }
@@ -58,10 +54,6 @@ func BenchmarkEulerRandomThirdRead1000000(b *testing.B) {
 	benchmarkEulerRandom(b, 33, 1000000)
 }
 
-func BenchmarkEulerRandomThirdRead10000000(b *testing.B) {
-	benchmarkEulerRandom(b, 33, 10000000)
-}
-
 //
 // 50% IsConnected, 25% Link, 25% Cut
 //
@@ -82,10 +74,6 @@ func BenchmarkEulerRandomHalfRead1000000(b *testing.B) {
 	benchmarkEulerRandom(b, 25, 1000000)
 }
 
-func BenchmarkEulerRandomHalfRead10000000(b *testing.B) {
-	benchmarkEulerRandom(b, 25, 10000000)
-}
-
 //
 // 100% IsConnected
 //
@@ -104,8 +92,4 @@ func BenchmarkEulerRandomOnlyRead100000(b *testing.B) {
 
 func BenchmarkEulerRandomOnlyRead1000000(b *testing.B) {
 	benchmarkEulerRandom(b, 0, 1000000)
-}
-
-func BenchmarkEulerRandomOnlyRead10000000(b *testing.B) {
-	benchmarkEulerRandom(b, 0, 10000000)
 }
